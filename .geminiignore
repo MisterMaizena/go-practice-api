@@ -1,0 +1,15 @@
+.git/
+vendor/
+bin/
+*.exe
+*.test
+*.prof
+__debug_bin
+.idea/
+.vscode/
+node_modules/
+dist/
+tmp/
+.DS_Store
+Thumbs.db
+.env

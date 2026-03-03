@@ -1,0 +1,18 @@
+name: go-practice-api
+services:
+  spanner:
+    image: gcr.io/cloud-spanner-emulator/emulator
+    container_name: spanner-emulator
+    ports:
+      - "${SPANNER_GRPC_PORT:-9010}:9010"
+      - "${SPANNER_REST_PORT:-9020}:9020"
+    restart: unless-stopped
+
+  firestore:
+    build:
+      context: .
+      dockerfile: Dockerfile.firestore-emulator
+    container_name: firestore-emulator
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
